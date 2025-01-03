@@ -17,18 +17,15 @@ import java.io.File;
 //        - znalezc mina, maxa w ciagu
 //        - znalezc najpopularniejsza liczbe z ciagu
 //        - stwierdzic czy miedzy min i max znajduja sie wszystkie mozliwe liczby naturalne.
+
 public class Runner {
     public static void main(String[] args) {
-//        int[] ciag1 = new int[]{0,0,0,0};
-//        Sequencer.printReport(ciag1);
-        try (
-            Scanner scanner = new Scanner(new File("src/main/java/pl/kurs/test/zad4/liczby.txt"))
-        ){
+
+        try (Scanner scanner = new Scanner(new File("src/main/java/pl/kurs/test/zad4/liczby.txt"))) {
             while (scanner.hasNext()) {
                 Sequencer.printReport(scanner.nextLine());
             }
-            }
-
+        }
         catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -5,6 +5,7 @@ public class Sequencer {
         if (sequence.length < 2) {
             return "ROSNĄCY I MALEJĄCY";
         }
+
         boolean isIncreasing = true;
         boolean isStrictlyIncreasing = true;
         boolean isDecreasing = true;
@@ -33,6 +34,7 @@ public class Sequencer {
                 return "INNY";
             }
         }
+
         if (allEqual) {return "ROSNĄCY I MALEJĄCY";}
         else if (isStrictlyIncreasing) {return "SCISLE ROSNĄCY";}
         else if (isIncreasing) {return "ROSNĄCY";}
@@ -71,11 +73,11 @@ public class Sequencer {
         return max;
     }
 
-
     private static int findMostPopularNumber (int[] sequence) {
         if (sequence.length == 1) {
             return sequence[0];
         }
+
         int mostPopularNumber = sequence[0];
         int maxCount = 0;
 
@@ -123,6 +125,7 @@ public class Sequencer {
         }
         return intArray;
     }
+
     public static void printReport (String inputString) {
         System.out.println("Generuje raport dla danych wejściowych: " + inputString);
         int[] intSequence = convertToIntArray(inputString);
