@@ -1,6 +1,6 @@
 package pl.kurs.test.zad4;
 
-public class Sequencer {
+public class SequenceReport {
     private static String getMonotonicType(int[] sequence) {
         if (sequence.length < 2) {
             return "ROSNĄCY I MALEJĄCY";
@@ -35,12 +35,19 @@ public class Sequencer {
             }
         }
 
-        if (allEqual) {return "ROSNĄCY I MALEJĄCY";}
-        else if (isStrictlyIncreasing) {return "SCISLE ROSNĄCY";}
-        else if (isIncreasing) {return "ROSNĄCY";}
-        else if (isStrictlyDecreasing) {return "SCISLE MALEJĄCY";}
-        else if (isDecreasing) {return "MALEJĄCY";}
-        else {return "INNY";}
+        if (allEqual) {
+            return "ROSNĄCY I MALEJĄCY";
+        } else if (isStrictlyIncreasing) {
+            return "SCISLE ROSNĄCY";
+        } else if (isIncreasing) {
+            return "ROSNĄCY";
+        } else if (isStrictlyDecreasing) {
+            return "SCISLE MALEJĄCY";
+        } else if (isDecreasing) {
+            return "MALEJĄCY";
+        } else {
+            return "INNY";
+        }
     }
 
     private static int findMin(int[] sequence) {
@@ -73,7 +80,7 @@ public class Sequencer {
         return max;
     }
 
-    private static int findMostPopularNumber (int[] sequence) {
+    private static int findMostPopularNumber(int[] sequence) {
         if (sequence.length == 1) {
             return sequence[0];
         }
@@ -84,7 +91,7 @@ public class Sequencer {
         for (int i = 0; i < sequence.length; i++) {
             int counter = 0;
             for (int j = 0; j < sequence.length; j++) {
-                if(sequence[j] == sequence[i]) {
+                if (sequence[j] == sequence[i]) {
                     counter++;
                 }
             }
@@ -96,7 +103,7 @@ public class Sequencer {
         return mostPopularNumber;
     }
 
-    private static boolean areThereAllNaturalNumbers (int[] sequence) {
+    private static boolean areThereAllNaturalNumbers(int[] sequence) {
         if (sequence.length == 1) {
             return true;
         }
@@ -113,10 +120,11 @@ public class Sequencer {
             if (!found) {
                 return false;
             }
-        } return true;
+        }
+        return true;
     }
 
-    public static int[] convertToIntArray (String inputString) {
+    public static int[] convertToIntArray(String inputString) {
         String[] stringArray = inputString.split(" ");
         int[] intArray = new int[stringArray.length];
 
@@ -126,7 +134,7 @@ public class Sequencer {
         return intArray;
     }
 
-    public static void printReport (String inputString) {
+    public static void printReport(String inputString) {
         System.out.println("Generuje raport dla danych wejściowych: " + inputString);
         int[] intSequence = convertToIntArray(inputString);
         System.out.println("Dany ciąg jest: " + getMonotonicType(intSequence));

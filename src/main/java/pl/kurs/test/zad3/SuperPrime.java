@@ -1,9 +1,9 @@
 package pl.kurs.test.zad3;
 
 public class SuperPrime {
-    private static int[] addItemToIntArray (int[] inputArray) {
-        int[] newArray = new int[inputArray.length+1];
-        for (int i = 0; i < inputArray.length; i++){
+    private static int[] addItemToIntArray(int[] inputArray) {
+        int[] newArray = new int[inputArray.length + 1];
+        for (int i = 0; i < inputArray.length; i++) {
             newArray[i] = inputArray[i];
         }
         return newArray;
@@ -32,7 +32,7 @@ public class SuperPrime {
         return true;
     }
 
-    public static int[] superPrimes (int from, int to) {
+    public static int[] superPrimes(int from, int to) {
         int[] resultArr = new int[0];
         int initPos = 0;
         while (from <= to) {

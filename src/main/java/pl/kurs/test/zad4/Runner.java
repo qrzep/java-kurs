@@ -23,10 +23,9 @@ public class Runner {
 
         try (Scanner scanner = new Scanner(new File("src/main/java/pl/kurs/test/zad4/liczby.txt"))) {
             while (scanner.hasNext()) {
-                Sequencer.printReport(scanner.nextLine());
+                SequenceReport.printReport(scanner.nextLine());
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
